@@ -2,6 +2,10 @@
 ```markdown
 # Cấu trúc thư mục của ứng dụng frontend (client)
 
+
+```markdown
+# Cấu trúc thư mục của ứng dụng
+
 ```
 /src
   ├─ /pages
