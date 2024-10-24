@@ -14,7 +14,7 @@
   - Thêm thông tin về lịch sử nhà dòng, thông tin về website, sự kiện, và các lễ lớn.
 - **Lễ:** Thêm các lễ lớn và lễ bổn mạng của nhà dòng.
 - **App History:** Xem lịch sử hoạt động của ứng dụng (người dùng đã làm gì trên web).
-- **Ơn gọi:** Đăng và quản lý tin tức về ơn gọi.
+- **Ơn gọi:** Đăng và quản lý tin tức về ơn gọi, quản lý các đơn apply.
 
 ## 2. Manager Permissions:
 - **Blog:** Thêm, sửa, xóa các bài blog (với quyền hạn như Admin).
@@ -25,11 +25,12 @@
   - Duyệt các bình luận.
   - Thêm, sửa, xóa bình luận.
 - **App History:** Xem lịch sử hoạt động của ứng dụng.
-- **Ơn gọi:** Đăng và quản lý tin tức về ơn gọi.
+- **Ơn gọi:** Đăng và quản lý tin tức về ơn gọi, quản lý các đơn apply.
 
 ## 3. Người dùng (User) Permissions:
 - **Comment:** Thêm bình luận (cần nhập tên và email để gửi bình luận).
 - **History:** Xem thông tin lịch sử nhà dòng và thông tin về website.
+- **Ơn Gọi:** Xem ơn gọi và apply ơn gọi bằng cách điền form.
 
 ## Tóm lại:
 - Admin có toàn quyền trong tất cả các phần.
