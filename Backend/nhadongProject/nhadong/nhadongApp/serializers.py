@@ -1,9 +1,10 @@
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from django.conf import settings
 from rest_framework import serializers
-from .models import Role, User, Queue
+from .models import Role, User, Queue, Category
 from . import utils
 from django.utils import timezone
+from django.contrib.auth.hashers import make_password
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -47,15 +48,14 @@ class UserSerializer(serializers.ModelSerializer):
     def register(self, validated_data):
         # Exclude 'profile_image' from validated_data
         validated_data.pop('profile_image', None)
+        #haspassword
+        validated_data['password'] = make_password(validated_data['password'])
         validated_data['is_superuser'] = False
         validated_data['is_staff'] = False
-        validated_data['is_active'] = False
+        validated_data['is_active'] = True
         validated_data['date_joined'] = timezone.now().strftime('%Y-%m-%d %H:%M:%S')
         validated_data['profile_image'] = "https://hcm03.vstorage.vngcloud.vn/v1/AUTH_ca738c2324784e49be7201dbb159abde/nhadongApp/avatar/DEFAULT_AVATAR.png"
-        # Use generate_script to build the SQL query
-        query = utils.generate_script(User, validated_data, 'INSERT')
-        # Return the generated SQL query
-        return query, validated_data
+        return validated_data
 
 class QueueSerializer(serializers.ModelSerializer):
     class Meta:
@@ -88,3 +88,14 @@ class RoleDetailSerializer(RoleSerializer):
 class RoleListSerializer(RoleSerializer):
     class Meta(RoleSerializer.Meta):
         fields = ['id','name','description']
+
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = '__all__'
+
+
+class CategoryListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = ['id', 'name']

@@ -87,10 +87,10 @@ def add_users_for_role(user_roles):
         try:
             # Lấy user dựa trên username
             user = User.objects.get(username=user_role['username'])
-
+            print(f"Found user: {user.username}")
             # Lấy role dựa trên tên vai trò
             role = Role.objects.get(name=user_role['role'])
-
+            print(f"Found role: {role.name}")
             # Gán vai trò cho người dùng
             if user.role == role:
                 print(f"User {user.username} already has role {role.name}.")

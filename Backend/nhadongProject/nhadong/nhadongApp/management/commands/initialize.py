@@ -49,6 +49,11 @@ LOGIN = [
         'email':'admin@example.com',
         'password': '123'
     },
+    {
+        'username': 'test',
+        'email':'admin@example.com',
+        'password': '123'
+    },
 ]
 # Khởi tạo các account system admin
 LOGIN_SYS_ADMIN = [
@@ -67,7 +72,11 @@ USERROLES = [
     {
         'username': 'sysadmin',
         'role': 'admin'
-    }
+    },
+    {
+        'username': 'test',
+        'role': 'admin'
+    },
 ]
 """
 cấu hình vstorage
@@ -89,10 +98,6 @@ class Command(BaseCommand):
         utils.create_roles(ROLES)
         self.stdout.write(self.style.SUCCESS('Successfully initialized roles'))
 
-        # Thêm vai trò cho user
-        utils.add_users_for_role(USERROLES)
-        self.stdout.write(self.style.SUCCESS('Successfully initialized user role'))
-
         #tạo staff user
         utils.create_staff_users(LOGIN)
         self.stdout.write(self.style.SUCCESS('Successfully initialized staff users'))
@@ -100,6 +105,10 @@ class Command(BaseCommand):
         # tạo super user
         utils.create_super_users(LOGIN_SYS_ADMIN)
         self.stdout.write(self.style.SUCCESS('Successfully initialized super users'))
+
+        # Thêm vai trò cho user
+        utils.add_users_for_role(USERROLES)
+        self.stdout.write(self.style.SUCCESS('Successfully initialized user role'))
 
         # lấy token vstorage
         utils.create_categories(CATEGORIES)

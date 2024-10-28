@@ -154,7 +154,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 from datetime import timedelta
 #jwt
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=120),  # Thời gian hết hạn của access token (ở đây là 5 phút)
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=2),  # Thời gian hết hạn của access token (ở đây là 5 phút)
     'REFRESH_TOKEN_LIFETIME': timedelta(days=7),    # Thời gian hết hạn của refresh token (ở đây là 7 ngày)
     'ROTATE_REFRESH_TOKENS': False,                  # Cấu hình này sẽ cấp refresh token mới khi refresh access token
     'BLACKLIST_AFTER_ROTATION': True,               # Thêm refresh token cũ vào danh sách đen sau khi đã được thay thế

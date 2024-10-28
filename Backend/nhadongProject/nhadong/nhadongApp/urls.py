@@ -5,6 +5,7 @@ router = routers.DefaultRouter()
 router.register(r'role', views.RoleViewSet, basename='role')  # Specify the basename here
 router.register(r'user', views.UserViewSet, basename='user')  # Specify the basename here
 router.register(r'queue', views.QueueViewSet, basename='queue')  # Specify the basename here
+router.register(r'category', views.CategoryViewSet, basename='category')  # Specify the basename here
 
 urlpatterns = [
     path('', include(router.urls)),

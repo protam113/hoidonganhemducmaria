@@ -106,29 +106,35 @@ class Role(models.Model):
 Hàng đợi duyệt
 """
 class Queue(BaseModel):
-    # Trường lưu trữ truy vấn
-    query = models.TextField(blank=False, null=False)
+    data = models.TextField(blank=False, null=False)
     description = models.TextField(blank=False, null=False)
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
 
-    # Trường action với các giá trị: thêm, sửa, xóa
-    ACTION_CHOICES = [
-        ('create', 'Thêm'),
-        ('edit', 'Sửa'),
-        ('delete', 'Xóa'),
-    ]
-    action = models.CharField(max_length=10, choices=ACTION_CHOICES, blank=False)
+    class ActionChoices(models.TextChoices):
+        CREATE = 'create', 'Thêm'
+        EDIT = 'edit', 'Sửa'
+        DELETE = 'delete', 'Xóa'
 
-    # Trường status với các giá trị: approve, reject, pending
-    STATUS_CHOICES = [
-        ('approve', 'Được duyệt'),
-        ('reject', 'Bị từ chối'),
-        ('pending', 'Đang chờ'),
-    ]
-    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='pending')
+    action = models.CharField(
+        max_length=10,
+        choices=ActionChoices.choices,
+        default=ActionChoices.CREATE,
+    )
+
+    class StatusChoices(models.TextChoices):
+        APPROVE = 'approve', 'Được duyệt'
+        REJECT = 'reject', 'Bị từ chối'
+        PENDING = 'pending', 'Đang chờ'
+        ERROR = 'error', 'Xảy ra lỗi'
+
+    status = models.CharField(
+        max_length=10,
+        choices=StatusChoices.choices,
+        default=StatusChoices.PENDING,
+    )
 
     def __str__(self):
-        return f"{self.query} - {self.get_action_display()} - {self.get_status_display()}"
+        return f"{self.description}"
 
 """
 Thông tin của cloud vStorage
