@@ -1,6 +1,6 @@
 // src/components/layout/DefaultLayout/index.tsx
 import { ReactNode } from "react";
-import { Header, TopHeader } from "./components/Header";
+import Header, { TopHeader } from "./components/Header";
 import Footer from "./components/Footer";
 
 interface DefaultLayoutProps {
@@ -9,11 +9,16 @@ interface DefaultLayoutProps {
 
 const DefaultLayout: React.FC<DefaultLayoutProps> = ({ children }) => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="relative">
+      {" "}
+      {/* Thêm lớp relative cho container */}
       <TopHeader />
-
-      <Header />
-      <main>{children}</main>
+      <Header /> {/* Đặt Navbar với z-index cao */}
+      <main>
+        {" "}
+        {/* Thêm padding-top cho main để không bị che bởi Navbar */}
+        {children}
+      </main>
       <footer>
         <Footer />
       </footer>

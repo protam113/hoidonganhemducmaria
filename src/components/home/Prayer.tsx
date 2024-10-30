@@ -37,9 +37,9 @@ export const Prayer = () => {
             hành, nhỏ bé không thể leo lên những bậc thang cao của bậc hoàn
             thiện được”. Người  tìm kiếm chiếc thang máy đưa mình lên, và thánh
             nhân đã khám phá ra chiếc thang máy đó là chính Chúa Giê-su: “Lạy
-            Chúa Giê-su, chiếc thang máy nâng con lên tới...
+            Chúa Giê-su, chiếc thang máy nâng con lên tới...{" "}
+            <button className="text-black font-semibold">Xem Thêm</button>
           </p>
-          <button className="text-black font-semibold">XEM THÊM</button>
         </div>
 
         {/* Slideshow Section */}

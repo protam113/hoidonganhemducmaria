@@ -5,10 +5,11 @@ import "react-calendar/dist/Calendar.css"; // Import CSS của react-calendar
 import CalendarCustom from "./Calendar";
 import { Prayer } from "./Prayer";
 import { Congregation } from "./Congregation";
+import { Activity } from "@/pages/activity";
 
 export const News = () => {
   return (
-    <article className="container mx-auto" style={{ width: "1400px" }}>
+    <article className="container mx-auto pt-20" style={{ width: "1400px" }}>
       {/* Phần header của Tin Tức */}
       <header className="bg-primary-500 py-3 rounded-lg flex items-center justify-between">
         <h2 className="text-white font-semibold pl-4">Tin Tức</h2>
@@ -45,6 +46,8 @@ export const Content = () => {
       <Congregation />
       <br />
       <Invitation />
+      <br />
+      <Activity />
     </div>
   );
 };

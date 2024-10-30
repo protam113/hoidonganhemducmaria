@@ -8,6 +8,14 @@ export const NavItems = () => {
       key: 1,
       label: "Trang Chủ",
       link: "/",
+      // children: [
+      //   {
+      //     id: 13,
+      //     label: "Giới Thiệu",
+      //     link: "/hoi_dong/about_us",
+      //     icon: MdGroups,
+      //   },
+      // ],
     },
     {
       key: 2,

@@ -2,15 +2,15 @@ import Image from "next/image";
 import React from "react";
 import congregation from "@/assets/image/congregation.png";
 import bannerImage from "@/assets/image/banner.png";
-export const Congregation = () => {
+export const Activity = () => {
   const HandleOnClick = () => {
-    alert("Hello");
+    alert("hello");
   };
   return (
     <article className="container mx-auto pt-10" style={{ width: "1400px" }}>
       {/* Phần header của Tin Tức */}
       <header className="bg-primary-500 py-3 rounded-lg flex items-center justify-between">
-        <h2 className="text-white font-semibold pl-4">Hội dòng</h2>
+        <h2 className="text-white font-semibold pl-4">Hoạt động</h2>
         <button className="text-white font-semibold pr-4">Xem thêm</button>
       </header>
 

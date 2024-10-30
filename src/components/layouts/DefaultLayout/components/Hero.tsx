@@ -1,83 +1,143 @@
 import Image from "next/image";
-import bannerImage from "@/assets/image/banner.png";
+import { Slide } from "react-slideshow-image";
+import "react-slideshow-image/dist/styles.css"; // Thêm style cho slideshow
+import banner1 from "@/assets/image/banner1.jpg";
+import banner2 from "@/assets/image/banner2.jpg";
+import banner3 from "@/assets/image/banner3.jpg";
+import { FaArrowLeft, FaArrowRight, FaLongArrowAltRight } from "react-icons/fa";
+
+// Dữ liệu cho phần tin tức
+const newsData = [
+  {
+    time: "30/10/2024",
+    author: "HOANG",
+    title:
+      "Đức Giáo hoàng Phanxicô đã công bố tổ chức Công nghị Hồng y vào ngày",
+    image: "/path/to/news1.jpg",
+  },
+  {
+    time: "05/10/2024",
+    author: "THUONG",
+    title:
+      "Đức Giáo hoàng Phanxicô đã công bố tổ chức Công nghị Hồng y vào ngày",
+    image: "/path/to/news2.jpg",
+  },
+  {
+    time: "27/10/2024",
+    author: "ALIZABET",
+    title:
+      "Đức Giáo hoàng Phanxicô đã công bố tổ chức Công nghị Hồng y vào ngày",
+    image: "/path/to/news3.jpg",
+  },
+  {
+    time: "29/10/2024",
+    author: "ADMIN",
+    title:
+      "Đức Giáo hoàng Phanxicô đã công bố tổ chức Công nghị Hồng y vào ngày",
+    image: "/path/to/news4.jpg",
+  },
+];
 
 const Hero = () => {
+  const images = [banner1, banner2, banner3]; // Mảng chứa hình ảnh
+
+  // Chia dữ liệu tin tức thành các slide với mỗi slide chứa 4 phần tử
+  const slides = [];
+  for (let i = 0; i < newsData.length; i += 4) {
+    slides.push(newsData.slice(i, i + 4));
+  }
+
   return (
-    <div className="flex justify-center py-10 cursor-pointer relative">
-      {/* Phần hình ảnh lớn */}
-      <div className="relative">
-        <Image
-          src={bannerImage}
-          alt="Banner Image"
-          className="rounded-sm"
-          height={500}
-          width={500}
-          objectFit="cover"
-        />
-        {/* Thông báo ở giữa hình ảnh */}
-        <div className="absolute top-20 -left-20 bg-secondary-50 p-4 rounded-lg text-black w-[300px] h-[250px] ">
-          <div className="flex items-center gap-2">
-            <div className="relative w-6 h-6 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
-              <svg
-                className="absolute w-8 h-8 text-gray-400 -left-1"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-            </div>
-            <p className="font-semibold mr-2 text-10">nudamin</p>
-            <p className="text-[#9C9C9C] text-10">07/10/2024 19:28</p>
-          </div>
-
-          <h2 className="font-bold text-xs pt-1">
-            Dòng Đa Minh có 3 tân Hồng y: Cha Timothy Radcliffe cùng với Tổng
-            Giám mục Jean-Paul Vesco, và Tổng Giám mục Francis Lê
-          </h2>
-          <p className="text-10 pt-3 pb-1">
-            WĐMVN (06.10.2024) - Ngày 06.10.2024, sau Kinh Truyền tin, Đức Giáo
-            hoàng Phanxicô đã công bố tổ chức Công nghị Hồng y vào ngày
-            08.12.2024, nhân dịp Lễ Đức Mẹ Vô Nhiễm Nguyên Tội tại Vatican. Công
-            nghị này sẽ tấn phong 21 Hồng y mới, trong đó có Cha Timothy Peter
-            Joseph Radcliffe, O.P. – Nguyên Bề Trên Tổng Quyền Dòng Đa Minh cùng
-            với Đức Tổng Giám mục Jean-Paul Vesco –
-          </p>
-          <button className="font-bold text-xs">Đọc thêm</button>
-        </div>
-      </div>
-
-      {/* Phần tin tức */}
-      <div className="ml-4 grid gap-4 ">
-        {[...Array(4)].map((_, index) => (
-          <div
-            key={index}
-            className="rounded-lg flex items-start gap-2 bg-secondary-50"
-          >
-            <Image
-              src={bannerImage}
-              alt="News Image"
-              width={110}
-              objectFit="cover"
-              className="rounded-md"
-            />
-            <div className="w-50">
-              <div className="flex items-center gap-2">
-                <p className="font-semibold text-xs">DongDaMinh</p>
-                <p>•</p>
-                <p className="text-[#9C9C9C] text-xs">07/10/2024 19:28</p>
-              </div>
-              <h4 className="font-semibold ">
-                Đức Giáo hoàng Phanxicô đã công bố tổ chức Công nghị Hồng y vào
-                ngày 08.12.2024
-              </h4>
+    <div className="relative w-full h-[450px]">
+      <Slide
+        easing="ease"
+        autoplay={true} // Tự động chuyển slide
+        duration={3000} // Thời gian chuyển slide
+        transitionDuration={500} // Thời gian chuyển đổi
+        arrows={false}
+      >
+        {images.map((image, index) => (
+          <div className="each-slide" key={index}>
+            <div className="relative w-full h-full">
+              <Image
+                src={image}
+                alt={`Banner Image ${index + 1}`}
+                className="rounded-sm object-cover w-full h-full banner-image"
+              />
             </div>
           </div>
         ))}
+      </Slide>
+
+      {/* Phần tin tức */}
+      <div className="relative cursor-pointer ">
+        <div
+          className="rounded-lg w-full -bottom-10 md:w-3/4 absolute left-1/2 transform -translate-x-1/2  bg-primary-400 px-3"
+          style={{
+            boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.25)", // Điều chỉnh độ mờ và hướng của shadow
+          }}
+        >
+          <Slide
+            easing="ease"
+            autoplay={true} // Tự động chuyển slide
+            duration={4000} // Thời gian chuyển slide
+            transitionDuration={500} // Thời gian chuyển đổi
+            arrows={true}
+            prevArrow={
+              <div
+                style={{
+                  width: "20px",
+                  height: "20px",
+                  fontSize: "14px",
+                  color: "white",
+                }}
+              >
+                {<FaArrowLeft />}
+              </div>
+            }
+            nextArrow={
+              <div
+                style={{
+                  width: "20px",
+                  height: "20px",
+                  fontSize: "14px",
+                  color: "white",
+                }}
+              >
+                {<FaArrowRight />}
+              </div>
+            }
+          >
+            {slides.map((slide, index) => (
+              <div className="flex flex-wrap justify-between px-4" key={index}>
+                {slide.map((news, newsIndex) => (
+                  <div
+                    className="bg-primary-400 p-4 w-full md:w-1/4 "
+                    key={newsIndex}
+                  >
+                    <p className="text-white text-xs font-bold">
+                      <i>{news.time}</i>
+                    </p>
+                    <p className="w-max rounded-xl bg-primary-500 text-white text-xs mt-1 mb-3 py-1 px-3">
+                      {news.author}
+                    </p>
+                    <p
+                      className="text-white text-sm font-bold trucate overflow-hidden"
+                      style={{ maxHeight: "35px", lineHeight: "1.20em" }}
+                    >
+                      {news.title}
+                    </p>
+                    <hr className="border-t-1 border-white mt-2 mb-3" />
+                    <div className="flex items-center gap-1 text-primary-100 hover-effect">
+                      <i>Tiếp tục đọc</i>{" "}
+                      <FaLongArrowAltRight className="arrow-icon" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </Slide>
+        </div>
       </div>
     </div>
   );

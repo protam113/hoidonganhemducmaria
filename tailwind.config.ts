@@ -75,11 +75,11 @@ const config: Config = {
       fontSize: {
         10: "10px",
         12: "12px",
-        14: "14px",
+        14: "14px", //promary
         16: "16px",
         18: "18px",
-        20: "20px",
-        24: "24px",
+        20: "20px", //content
+        24: "24px",  //title
         26: "26px",
         28: "28px",
         30: "30px",
