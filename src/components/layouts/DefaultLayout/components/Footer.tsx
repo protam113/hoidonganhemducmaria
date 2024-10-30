@@ -52,6 +52,7 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
+
             <div>
               <h2 className="mb-4 text-sm font-semibold text-white uppercase">
                 Follow us
@@ -66,6 +67,7 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
+
             <div>
               <h2 className="mb-4 text-sm font-semibold text-white uppercase">
                 Legal
