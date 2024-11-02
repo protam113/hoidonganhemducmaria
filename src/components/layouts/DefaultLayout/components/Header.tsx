@@ -11,7 +11,6 @@ import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { NavItems } from "@/ultis/config";
 import { MdOutlineMail } from "react-icons/md";
 import { FaPhoneVolume } from "react-icons/fa";
-import { CiLogin } from "react-icons/ci";
 
 type NavItem = {
   label: string;
@@ -54,7 +53,7 @@ export default function Navbar() {
   }
 
   return (
-    <div className="sticky mx-auto flex w-full justify-between px-8 py-3 text-14 bg-primary-500 z-10">
+    <div className="sticky top-0 mx-auto flex w-full justify-between px-8 py-3 text-14 bg-primary-500 z-10">
       {/* left side  */}
       <section
         ref={animationParent}
@@ -83,12 +82,12 @@ export default function Navbar() {
               </p>
               {/* dropdown */}
               {d.children && (
-                <div className="absolute z-50 top-full left-0 hidden flex-col gap-1 rounded-lg bg-white py-3 shadow-md transition-all group-hover:flex">
+                <div className="absolute z-50 top-full left-0 hidden flex-col gap-1 bg-primary-500 py-3 transition-all group-hover:flex">
                   {d.children.map((ch, i) => (
                     <Link
                       key={i}
                       href={ch.link ?? "#"}
-                      className="flex cursor-pointer items-center py-1 pl-6 pr-8 text-black hover:text-yellow-500"
+                      className="flex cursor-pointer items-center py-1 pl-6 pr-8 text-white hover:text-yellow-300"
                     >
                       <span className="whitespace-nowrap pl-3">{ch.label}</span>
                     </Link>
@@ -101,9 +100,11 @@ export default function Navbar() {
 
         {/* right side data */}
         <section className="hidden md:flex items-center gap-8">
-          <button className="flex items-center h-fit rounded-xl  bg-primary-400 px-4 py-2 text-white font-bold transition-colors duration-300 ease-in-out hover:bg-yellow-500">
-            <p>Login</p> <CiLogin size={20} />
-          </button>
+          <Link href="/login">
+            <button className="h-fit rounded-xl  bg-primary-400 px-4 py-2 text-white font-bold transition-colors duration-300 ease-in-out hover:bg-yellow-500">
+              Login
+            </button>
+          </Link>
         </section>
 
         <FiMenu

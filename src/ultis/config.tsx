@@ -76,5 +76,10 @@ export const NavItems = () => {
       label: "Quyền Góp",
       link: "/donation",
     },
+    {
+      id: 13,
+      label: "Login",
+      link: "/login",
+    },
   ];
 };

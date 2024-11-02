@@ -22,6 +22,12 @@ const mockArticles = [
     author: "VaticanNews",
     date: "05/10/2024 15:00",
   },
+  {
+    id: 4,
+    title: "Thông điệp của Đức Giáo hoàng cho Giáng sinh 2024",
+    author: "GiangSinh2024",
+    date: "04/10/2024 09:45",
+  },
 ];
 
 export default function DetailPage() {
@@ -50,6 +56,23 @@ export default function DetailPage() {
           </p>
           <Image src={Banner} alt="news" width={500} height={300} />
         </div>
+        <div
+          className="prose-md container prose prose-lg mx-auto mt-8 max-w-6xl px-6 sm:px-6 lg:prose-xl"
+          dangerouslySetInnerHTML={{
+            __html: "<p>Nội dung bài viết về Next.js.</p>",
+          }}
+        />
+
+        <Image src={Banner} alt="news" width={500} height={300} />
+        {/* json  */}
+        <div
+          className="prose-md container prose prose-lg mx-auto mt-8 max-w-3xl px-6 sm:px-6 lg:prose-xl"
+          dangerouslySetInnerHTML={{
+            __html: "<p>Nội dung bài viết về Next.js.</p>",
+          }}
+        />
+
+        <Image src={Banner} alt="news" width={500} height={300} />
 
         <div
           className="prose-md container prose prose-lg mx-auto mt-8 max-w-3xl px-6 sm:px-6 lg:prose-xl"
@@ -65,12 +88,12 @@ export default function DetailPage() {
               Xem thêm
             </button>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
             {mockArticles.map((article) => (
               <div key={article.id} className="rounded-lg flex flex-col gap-2">
                 <div
                   className="relative overflow-hidden w-full"
-                  style={{ height: "350px" }}
+                  style={{ height: "250px" }}
                 >
                   <Image
                     src={Banner}

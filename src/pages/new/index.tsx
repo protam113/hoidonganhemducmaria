@@ -1,11 +1,19 @@
-// 'use client'
+"use client";
 
-// import { useState } from "react";
+// import AboutCoverSection from "@/components/AboutUs/Section";
+import FeaturedPosts from "@/components/New/FeaturedPosts";
+import RecentPosts from "@/components/New/RecentPosts";
+import RelatedPosts from "@/components/New/RelatedPosts";
 
-// // src/pages/about.tsx
-// const New = () => {
-//   const [new, setNew]= useState("")
-//     return <div>HOt New</div>;
-//   };
+const New = () => {
+  return (
+    <main className="flex flex-col items-center justify-center">
+      {/* <AboutCoverSection /> */}
+      <FeaturedPosts />
+      <RecentPosts />
+      <RelatedPosts />
+    </main>
+  );
+};
 
-//   export default New;
+export default New;

@@ -48,7 +48,7 @@ const Hero = () => {
   }
 
   return (
-    <div className="relative w-full h-[450px]">
+    <div className="relative w-full h-4/5">
       <Slide
         easing="ease"
         autoplay={true} // Tự động chuyển slide
@@ -62,7 +62,7 @@ const Hero = () => {
               <Image
                 src={image}
                 alt={`Banner Image ${index + 1}`}
-                className="rounded-sm object-cover w-full h-full banner-image"
+                className="object-cover w-full h-full banner-image"
               />
             </div>
           </div>
@@ -72,7 +72,7 @@ const Hero = () => {
       {/* Phần tin tức */}
       <div className="relative cursor-pointer ">
         <div
-          className="rounded-lg w-full -bottom-10 md:w-3/4 absolute left-1/2 transform -translate-x-1/2  bg-primary-400 px-3"
+          className="rounded-lg w-full -bottom-10 md:w-3/4 absolute left-1/2 transform -translate-x-1/2  bg-primary-800 px-3"
           style={{
             boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.25)", // Điều chỉnh độ mờ và hướng của shadow
           }}
@@ -112,7 +112,7 @@ const Hero = () => {
               <div className="flex flex-wrap justify-between px-4" key={index}>
                 {slide.map((news, newsIndex) => (
                   <div
-                    className="bg-primary-400 p-4 w-full md:w-1/4 "
+                    className="bg-primary-800 p-4 w-full md:w-1/4 "
                     key={newsIndex}
                   >
                     <p className="text-white text-xs font-bold">
