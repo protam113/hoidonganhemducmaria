@@ -1,6 +1,4 @@
-Dưới đây là báo cáo markdown với hai ô: một ô chứa hình ảnh và một ô chứa mã nguồn:
 
-```markdown
 # Cấu trúc Thư mục Dự án
 
 Dưới đây là cấu trúc thư mục của dự án:
@@ -8,7 +6,7 @@ Dưới đây là cấu trúc thư mục của dự án:
 ```
 /apis
 ├── api.ts
-axiosClient.ts
+└── axiosClient.ts
 ```
 
 ## Mô tả các Tệp
@@ -21,36 +19,32 @@ axiosClient.ts
 
 ## Hình ảnh Cấu trúc Thư mục
 
-![image](https://github.com/user-attachments/assets/fe518ce9-e868-43fa-a412-a0836966d09c)
-
-![image](https://github.com/user-attachments/assets/118c9b77-10ba-4280-a2a4-65c99c3f6aa5)
+![Hình ảnh cấu trúc thư mục 1](https://github.com/user-attachments/assets/fe518ce9-e868-43fa-a412-a0836966d09c)
+![Hình ảnh cấu trúc thư mục 2](https://github.com/user-attachments/assets/118c9b77-10ba-4280-a2a4-65c99c3f6aa5)
 
 ## Mã Nguồn Ví dụ
 
-```
-typescript
-//api/api.ts
-
+### `/apis/api.ts`
+```typescript
 const baseURL = 'http://localhost:8000';
 
 const endpoints = {
-
-    //auth
+    // Auth
     login: '/auth/login/',
     users: '/user/',
-
-    //current user lgin
+    
+    // Current user login
     currentUser: '/user/detail/',
-
-    //queue
+    
+    // Queue
     queues: '/queue/',
     queueApprove: '/queue/browse/',
-
-    //category(thể loại)
-    categories:  '/category/',
+    
+    // Category (thể loại)
+    categories: '/category/',
     category: '/category/:id/',
-
-    //role
+    
+    // Role
     roles: '/role/',
     roleAddUserToManager: '/role/decentralize/',
 };
@@ -58,8 +52,8 @@ const endpoints = {
 export { baseURL, endpoints };
 ```
 
-```
-// axiosClient.ts
+### `axiosClient.ts`
+```typescript
 import axios, { AxiosRequestConfig } from "axios";
 import { baseURL } from "./api";
 
@@ -99,4 +93,3 @@ const handleAPI = async (
 export default handleAPI;
 export { handleAPI };
 ```
-
