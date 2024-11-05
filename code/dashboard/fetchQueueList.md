@@ -1,4 +1,3 @@
-Dưới đây là báo cáo markdown giải thích mã nguồn mà bạn đã cung cấp. Mã này sử dụng TypeScript để định nghĩa các kiểu dữ liệu và hàm để lấy danh sách hàng đợi từ một API:
 
 ```markdown
 # Giải Thích Mã Nguồn: Lấy Danh Sách Hàng Đợi
