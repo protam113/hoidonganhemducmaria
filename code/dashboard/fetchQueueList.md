@@ -87,4 +87,4 @@ const useQueueList = (page: number, filters: Filters = {}, refreshKey: number) =
 
 ## Kết luận
 Đoạn mã này giúp quản lý và lấy danh sách hàng đợi từ một API với khả năng lọc, phân trang và xác thực. Custom hook `useQueueList` cung cấp một cách tiếp cận thuận tiện để tích hợp chức năng này vào các thành phần React.
-```
+
