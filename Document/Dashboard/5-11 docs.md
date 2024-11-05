@@ -1,6 +1,5 @@
 
-# Cấu trúc Thư mục Dự án
-
+# Cấu trúc Thư mục API
 Dưới đây là cấu trúc thư mục của dự án:
 
 ```
