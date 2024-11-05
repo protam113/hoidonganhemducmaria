@@ -31,22 +31,14 @@ const baseURL = 'http://localhost:8000';
 const endpoints = {
     // Auth
     login: '/auth/login/',
-    users: '/user/',
     
     // Current user login
     currentUser: '/user/detail/',
-    
-    // Queue
-    queues: '/queue/',
-    queueApprove: '/queue/browse/',
     
     // Category (thể loại)
     categories: '/category/',
     category: '/category/:id/',
     
-    // Role
-    roles: '/role/',
-    roleAddUserToManager: '/role/decentralize/',
 };
 
 export { baseURL, endpoints };
