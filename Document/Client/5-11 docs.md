@@ -12,10 +12,10 @@ Dưới đây là cấu trúc thư mục của dự án:
 ## Mô tả các Tệp
 
 ### `/apis/api.ts`
-- Tệp này chứa các hàm API để tương tác với backend. Bạn có thể định nghĩa các endpoint, phương thức HTTP (GET, POST, PUT, DELETE,...) và xử lý phản hồi từ server.
+- Tệp này chứa các hàm API để tương tác với backend. Bạn có thể định nghĩa các endpoint.
 
 ### `axiosClient.ts`
-- Tệp này cấu hình một instance của Axios để thực hiện các yêu cầu HTTP. Nó có thể bao gồm các thiết lập như interceptor cho yêu cầu và phản hồi, cũng như các cấu hình cơ bản khác như base URL hoặc timeout.
+- Tệp này cấu hình một instance của Axios để thực hiện các yêu cầu HTTP. Nó có thể bao gồm các thiết lập như interceptor cho yêu cầu và phản hồi, cũng như các cấu hình cơ bản khác như base URL hoặc timeout, phương thức HTTP (GET, POST, PUT, DELETE,...) và xử lý phản hồi từ server.
 
 ## Hình ảnh Cấu trúc Thư mục
 
