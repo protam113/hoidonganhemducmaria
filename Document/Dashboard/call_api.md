@@ -1,6 +1,4 @@
-Để gọi API lấy danh sách bài viết bằng hook trong dự án Next.js, bạn cần thực hiện một số bước chi tiết. Dưới đây là hướng dẫn từng bước để sử dụng hook `useBlogList` và gọi API.
 
----
 
 # Hướng Dẫn Call API Lấy Danh Sách Bài Viết
 
@@ -21,7 +19,7 @@ API Client sẽ sử dụng `handleAPI` để thực hiện các yêu cầu API.
 
 **Ví dụ `handleAPI`**:
 
-[Click here to view the handleAPI.ts file](./Document/Client/5-11 docs.md)
+[Click here to view the handleAPI.ts file](/Document/Client/5-11 docs.md)
 
 
 ## 3. **Tạo Các Interface**
@@ -196,7 +194,3 @@ export default BlogList;
 - **Hiển thị danh sách bài viết**: Sử dụng `map` để hiển thị các bài viết từ `data.results`.
 - **Cập nhật trang**: Chuyển trang khi có dữ liệu `next`.
 
----
-
-## Kết Luận
-Bằng cách sử dụng `useBlogList`, bạn có thể dễ dàng fetch dữ liệu danh sách bài viết từ API và hiển thị chúng trong component của bạn. Các bước bao gồm cấu hình API client, tạo hàm fetch, xây dựng custom hook và sử dụng hook trong component để lấy và hiển thị dữ liệu.
