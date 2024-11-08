@@ -19,7 +19,7 @@ API Client sẽ sử dụng `handleAPI` để thực hiện các yêu cầu API.
 
 **Ví dụ `handleAPI`**:
 
-[Click here to view the handleAPI.ts file](/Document/Client/5-11 docs.md)
+[Click here to view the handleAPI.ts file](./Document/Client/5-11%20docs.md)
 
 
 ## 3. **Tạo Các Interface**
