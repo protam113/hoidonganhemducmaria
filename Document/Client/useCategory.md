@@ -282,12 +282,19 @@ export const CategoriesList = (currentPage: number, model: string, refreshKey: n
 };
 
 ```
+
+#### Giải thích
 ```typescript
 
     const { queueData, isLoading, isError } = CategoriesList(currentPage, "blog", refreshKey);
 ```
 
+- **Trạng thái tải (`isLoading`)**: Hiển thị nội dung “Loading…” khi đang tải dữ liệu.
+- **Trạng thái lỗi (`isError`)**: Hiển thị thông báo lỗi nếu xảy ra lỗi trong quá trình tải dữ liệu.
+- **Hiển thị danh sách thể loại**: Render danh sách các thể loại từ `CategoriesList`, bao gồm `name` và `image` (nếu có).
+- **Các Kiểu Dữ Liệu**: `currentPage` Lấy trang đầu tiên ở API , `"blog"` truyền `blog` để lấy danh sách thể loại của blog hoặc `news` để lấy danh sách thể loại của tin tức `new`  và `refreshKey` nút làm mới nếu cần.
 
+- 
 #### Giải thích Component `CategoriesList`
 
 - **Trạng thái tải (`isLoading`)**: Hiển thị nội dung “Loading…” khi đang tải dữ liệu.
