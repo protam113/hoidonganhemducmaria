@@ -15,7 +15,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="min-h-full flex items-center justify-center pt-10">
       <div className="w-full max-w-md bg-white rounded-lg shadow-md p-8">
         <div className="flex justify-center mb-6">
           <Image src={Logo} alt="logo" height={90} width={150} />
@@ -74,10 +74,7 @@ const LoginPage = () => {
         <div className="mt-4 text-center">
           <p className="text-sm text-gray-600">
             Chưa có tài khoản?{" "}
-            <Link
-              href="/RegisterPage"
-              className="text-indigo-500 hover:underline"
-            >
+            <Link href="/register" className="text-indigo-500 hover:underline">
               Đăng ký ngay
             </Link>
           </p>

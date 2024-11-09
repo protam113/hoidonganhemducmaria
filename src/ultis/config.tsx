@@ -30,30 +30,18 @@ export const NavItems = () => {
     {
       id: 3,
       label: "Hội Dòng",
-      link: "/hoi_dong",
+      link: "/hoidong",
       children: [
-        {
-          id: 7,
-          label: "Giới Thiệu",
-          link: "/hoi_dong/about_us",
-          icon: MdGroups,
-        },
-        {
-          id: 8,
-          label: "Lịch Sử Hình Thành",
-          link: "/hoi_dong/history",
-          icon: AiOutlineHistory,
-        },
         {
           id: 9,
           label: "Ơn Gọi",
-          link: "/hoi_dong/on_goi",
+          link: "/hoidong/on_goi",
           icon: MdOutlineEventNote,
         },
         {
           id: 11,
           label: "Sứ Vụ",
-          link: "/hoi_dong/on_goi",
+          link: "/hoidong/su_vu",
           icon: MdOutlineEventNote,
         },
       ],
@@ -73,13 +61,23 @@ export const NavItems = () => {
     },
     {
       id: 6,
-      label: "Quyền Góp",
+      label: "Quyên Góp",
       link: "/donation",
     },
     {
+      id: 15,
+      label: "Học Tập",
+      link: "/study",
+    },
+    {
       id: 13,
-      label: "Login",
+      // label: "Login",
       link: "/login",
+    },
+    {
+      id: 14,
+      // label: "Register",
+      link: "/register",
     },
   ];
 };

@@ -87,7 +87,7 @@ export default function Navbar() {
                     <Link
                       key={i}
                       href={ch.link ?? "#"}
-                      className="flex cursor-pointer items-center py-1 pl-6 pr-8 text-white hover:text-yellow-300"
+                      className="flex cursor-pointer items-center   py-1 pr-8 text-white hover:text-yellow-300"
                     >
                       <span className="whitespace-nowrap pl-3">{ch.label}</span>
                     </Link>

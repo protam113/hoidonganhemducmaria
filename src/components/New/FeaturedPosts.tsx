@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import featuredImage from "@/assets/image/new.jpg"; // Replace with your featured image
@@ -6,10 +7,12 @@ import recentImage2 from "@/assets/image/banner.png";
 import recentImage3 from "@/assets/image/banner.png";
 import recentImage4 from "@/assets/image/banner.png";
 import Container from "../Container/container";
+import Link from "next/link"; // Import Link from Next.js
 
-const BlogLayout = () => {
-  const recentPosts = [
+const FeaturedLayout = () => {
+  const data = [
     {
+      id: 1,
       image: recentImage1,
       date: "October 15, 2023",
       title: "Tìm hiểu về giáo lý cơ bản của Đạo giáo hội",
@@ -17,6 +20,7 @@ const BlogLayout = () => {
         "Khám phá các nguyên tắc và giáo lý cốt lõi của Đạo giáo hội và tầm ảnh hưởng của chúng đến đời sống tín đồ.",
     },
     {
+      id: 2,
       image: recentImage2,
       date: "September 5, 2023",
       title: "Các nghi thức trong Đạo giáo hội: Ý nghĩa và tầm quan trọng",
@@ -24,6 +28,7 @@ const BlogLayout = () => {
         "Một cái nhìn sâu sắc về các nghi thức tôn giáo trong Đạo giáo hội và cách chúng kết nối tín đồ với đức tin.",
     },
     {
+      id: 3,
       image: recentImage3,
       date: "August 20, 2023",
       title: "Đạo giáo hội và vai trò của cộng đồng trong đời sống tôn giáo",
@@ -31,6 +36,7 @@ const BlogLayout = () => {
         "Phân tích vai trò của cộng đồng trong Đạo giáo hội và cách nó ảnh hưởng đến sự phát triển tinh thần của tín đồ.",
     },
     {
+      id: 4,
       image: recentImage4,
       date: "July 12, 2023",
       title: "Những người sáng lập và lãnh đạo nổi bật của Đạo giáo hội",
@@ -49,8 +55,6 @@ const BlogLayout = () => {
         <div className="flex flex-col md:flex-row gap-4 pt-10">
           {/* Featured Post */}
           <div className="w-1/2 md:w-2/3 relative">
-            {" "}
-            {/* Thay đổi ở đây */}
             <Image
               src={featuredImage}
               alt="Featured post"
@@ -70,9 +74,9 @@ const BlogLayout = () => {
           </div>
 
           {/* Recent Posts */}
-          <div className="md:w-1/3 space-y-5 ">
-            {recentPosts.map((post, index) => (
-              <div key={index} className="flex gap-2 items-start shadow-md">
+          <div className="md:w-1/3 space-y-5">
+            {data.map((post, index) => (
+              <div key={post.id} className="flex gap-2 items-start shadow-md">
                 <Image
                   src={post.image}
                   alt={`Recent post ${index + 1}`}
@@ -84,9 +88,11 @@ const BlogLayout = () => {
                   <h3 className="text-md text-black font-semibold line-clamp-2 mb-5 leading-5">
                     {post.title}
                   </h3>
-                  <button className="text-white bg-primary-500 py-1 px-2 rounded-md text-xs hover:bg-yellow-500">
-                    Xem Thêm
-                  </button>
+                  <Link href={`/post/${post.id}`} passHref>
+                    <button className="text-white bg-primary-500 py-1 px-2 rounded-md text-xs hover:bg-yellow-500">
+                      Xem Thêm
+                    </button>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -97,4 +103,4 @@ const BlogLayout = () => {
   );
 };
 
-export default BlogLayout;
+export default FeaturedLayout;

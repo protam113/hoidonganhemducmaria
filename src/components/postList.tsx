@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { cx } from "@/ultis/all";
-// import { format, parseISO } from "date-fns";
 import Banner from "@/assets/image/banner.png";
 
 // Dữ liệu mẫu
@@ -112,8 +111,8 @@ export default function PostList({
             </div>
             <div className={cx(minimal && "flex items-center")}>
               <div>
-                {/* Hiển thị các danh mục */}
-                <div className="flex flex-wrap gap-2 mb-2">
+                {/* Hiển thị các danh mục thành 3 cột */}
+                <div className="grid grid-cols-3 gap-2 mb-2">
                   {post.categories.map((category) => (
                     <Link
                       key={category.slug.current}
@@ -183,7 +182,6 @@ export default function PostList({
                     className="truncate text-sm"
                     dateTime={post.publishedAt}
                   >
-                    {/*{format(parseISO(post.publishedAt), "MMMM dd, yyyy")}*/}
                     24/12/2024
                   </time>
                 </div>

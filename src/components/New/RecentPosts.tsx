@@ -8,7 +8,7 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Container from "../Container/container";
 
-const LatestPosts = () => {
+const RecentLayout = () => {
   const postsPerPage = 9; // Thay đổi số lượng bài viết trên mỗi trang
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -240,6 +240,46 @@ const LatestPosts = () => {
             {/* Latest Posts Grid */}
             <motion.div
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+              key={currentPage}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              {currentPosts.map((post, index) => (
+                <div
+                  key={index}
+                  className="bg-white shadow rounded-lg overflow-hidden h-full w-full"
+                >
+                  <div className="relative h-40 overflow-hidden">
+                    <Image
+                      src={latestPostImage}
+                      alt={post.title}
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                  </div>
+                  <div className="p-4">
+                    {/* Cập nhật link đến trang chi tiết */}
+                    <Link href={`/post/${post.link.split("-")[1]}`}>
+                      <h3 className="font-bold text-base line-clamp-2 pb-2 transition-colors duration-300 hover:text-yellow-500">
+                        {post.title}
+                      </h3>
+                    </Link>
+                    <p className="text-gray-600 text-sm line-clamp-3">
+                      {post.description}
+                    </p>
+                    <Link
+                      href={`/post/${post.link.split("-")[1]}`}
+                      className="text-accent mt-4 inline-block hover:text-yellow-500"
+                    >
+                      Đọc Thêm
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+            <motion.div
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
               key={currentPage} // Thay đổi key sẽ kích hoạt lại component
               initial={{ opacity: 0 }} // Giá trị khởi đầu
               animate={{ opacity: 1 }} // Giá trị kết thúc
@@ -248,22 +288,28 @@ const LatestPosts = () => {
               {currentPosts.map((post, index) => (
                 <div
                   key={index}
-                  className="bg-white shadow rounded-lg overflow-hidden w-full"
+                  className="bg-white  shadow rounded-lg overflow-hidden h-full w-full transition-transform duration-300 hover:shadow-lg" // Thêm hiệu ứng bóng đổ khi hover
                 >
-                  <Image
-                    src={latestPostImage}
-                    alt={post.title}
-                    className="rounded-t-lg object-cover w-full h-40 transition-transform duration-300 ease-in-out hover:scale-110"
-                  />
-                  <div className="p-4">
-                    <h3 className="font-bold text-base line-clamp-2 pb-2">
+                  <div className="relative h-40 overflow-hidden">
+                    {" "}
+                    {/* Khung chứa hình ảnh */}
+                    <Image
+                      src={latestPostImage}
+                      alt={post.title}
+                      layout="fill"
+                      objectFit="cover"
+                      className="transition-transform duration-300 ease-in-out transform hover:scale-110"
+                    />
+                  </div>
+                  <div className="p-4 cursor-pointer">
+                    <h3 className="font-bold text-base line-clamp-2 pb-2 transition-colors duration-300 hover:text-yellow-500">
                       {post.title}
                     </h3>
                     <p className="text-gray-600 text-sm line-clamp-3">
                       {post.description}
                     </p>
                     <Link
-                      className="text-accent mt-4 inline-block hover:text-yellow-500"
+                      className="text-accent mt-4 inline-block hover:text-yellow-500 transition-colors duration-300"
                       href={post.link}
                     >
                       Đọc Thêm
@@ -316,4 +362,4 @@ const LatestPosts = () => {
   );
 };
 
-export default LatestPosts;
+export default RecentLayout;
