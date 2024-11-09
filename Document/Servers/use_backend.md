@@ -33,6 +33,7 @@ Thư mục `nhadong` này chứa cả backend và frontend của dự án.
    ```bash
    docker-compose up
    ```
+![image](https://github.com/user-attachments/assets/0059c556-e74e-4a1e-935d-1f91716ca62a)
 
    Các dịch vụ sẽ được khởi chạy và backend sẽ sẵn sàng hoạt động.
 
