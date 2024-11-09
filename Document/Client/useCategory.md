@@ -169,10 +169,9 @@ export const CategoriesList = (currentPage: number, model: string, refreshKey: n
 
 Custom hook `useCategoriesList` sẽ giúp bạn lấy dữ liệu danh sách thể loại từ API `/category/`, kết hợp với các bộ lọc và hỗ trợ sử dụng lại trong nhiều component. Hook này sử dụng React Query để xử lý việc truy xuất dữ liệu và caching.
 
-### 1. Các Phần Import Cần Thiết
 
 
-### 2. Custom Hook `fetchCategoriesList`
+###  Custom Hook `fetchCategoriesList`
 
 Custom hook `fetchCategoriesList` là hàm bất đồng bộ (async function) thực hiện gọi API và trả về dữ liệu. Hàm này sẽ:
 
@@ -215,7 +214,7 @@ const fetchCategoriesList = async (
 };
 ```
 
-### 3. Custom Hook `useCategoriesList`
+###  Custom Hook `useCategoriesList`
 
 Custom hook `useCategoriesList` sử dụng `useQuery` từ `react-query` để quản lý truy vấn dữ liệu. Hook này bao gồm:
 
@@ -260,33 +259,34 @@ const useCategoriesList = (page: number, filters: Filters = {}, refreshKey: numb
 - **filters**: Bộ lọc tùy chọn để lọc kết quả từ API.
 - **refreshKey**: Tham số để làm mới dữ liệu mỗi khi có thay đổi.
 
-### 4. Component Sử Dụng Hook `useCategoriesList`
+###  Component Sử Dụng Hook `useCategoriesList`
 
 Ví dụ component sử dụng custom hook `useCategoriesList` để lấy dữ liệu danh sách thể loại và xử lý các trạng thái tải dữ liệu:
 
 ```typescript
-import { useCategoriesList } from "@/hooks/category/useCategories";
+"use client"; // Đảm bảo đây là client component
 
-export const CategoriesList = ({ currentPage, model, refreshKey }) => {
-    const { data, isLoading, isError } = useCategoriesList(currentPage, { model: [model] }, refreshKey);
 
-    const categoriesData = data?.results || []; // Dữ liệu danh sách thể loại
+// categoriesList.ts
+import {useCateogiesList} from "@/hooks/cateogry/useCategories";
 
-    if (isLoading) return <div>Loading...</div>;
-    if (isError) return <div>Error loading categories.</div>;
+export const CategoriesList = (currentPage: number, model: string, refreshKey: number) => {
+    const { data, isLoading, isError } = useCateogiesList(currentPage, {
+        model: [model], // Use the model chosen by the user
+    },refreshKey);
 
-    return (
-        <div>
-            {categoriesData.map((category) => (
-                <div key={category.id}>
-                    <h2>{category.name}</h2>
-                    {category.image && <img src={category.image} alt={category.name} />}
-                </div>
-            ))}
-        </div>
-    );
+
+    const queueData = data?.results || [];
+
+    return { queueData, isLoading, isError };
 };
+
 ```
+```typescript
+
+    const { queueData, isLoading, isError } = CategoriesList(currentPage, "blog", refreshKey);
+```
+
 
 #### Giải thích Component `CategoriesList`
 
