@@ -2,7 +2,7 @@
 
 ### Mục tiêu:
 - Xây dựng hệ thống quản lý danh sách các thầy và cộng đoàn.
-- Mỗi cộng đoàn bao gồm 3 đến 6 thành viên với các vai trò cụ thể: **Trưởng Cộng Đoàn**, **Kế Toán**, và **Thành Viên**.
+- Mỗi cộng đoàn bao gồm các vai trò cụ thể: **Trưởng Cộng Đoàn**, **Kế Toán**, và **Thành Viên**.
 - Admin tạo cộng đoàn trực tiếp, nhưng khi quản trị viên tạo, cần phải chờ xác nhận từ admin.
 
 ---
@@ -98,6 +98,6 @@
 
 ### Tóm tắt
 
-- **Mỗi Cộng Đoàn** chứa từ 3 đến 6 thành viên với các vai trò: Trưởng Cộng Đoàn, Kế Toán, và Thành Viên.
+- **Mỗi Cộng Đoàn** chứa các vai trò: Trưởng Cộng Đoàn, Kế Toán, và Thành Viên.
 - **Duyệt Cộng Đoàn**: Khi quản trị viên tạo, cần sự xác nhận của admin.
 - Cấu trúc các bảng và trường đã nêu chi tiết ở trên. Hãy xem xét cấu trúc này để đảm bảo tính nhất quán và dễ dàng sử dụng trong hệ thống quản lý.
