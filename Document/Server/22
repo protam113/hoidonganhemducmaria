@@ -1,1 +1,55 @@
-hi
+
+**PHIẾU KHẢO SÁT SỨC KHỎE TÂM THẦN**
+
+**Thông tin cá nhân:**
+1. **ID Người dùng:** (Mã số duy nhất)
+2. **Tuổi:** (Số tuổi, ví dụ: 25)
+3. **Giới tính:**  
+   - [ ] Nam  
+   - [ ] Nữ  
+   - [ ] Phi nhị giới  
+   - [ ] Không muốn nói  
+
+4. **Danh mục nghề nghiệp:**  
+   - [ ] CNTT  
+   - [ ] Tài chính  
+   - [ ] Y tế  
+   - [ ] Giáo dục  
+   - [ ] Kỹ thuật  
+   - [ ] Bán hàng  
+   - [ ] Khác  
+
+5. **Quốc gia cư trú:**  
+   - [ ] Hoa Kỳ  
+   - [ ] Ấn Độ  
+   - [ ] Anh  
+   - [ ] Canada  
+   - [ ] Úc  
+   - [ ] Đức  
+   - [ ] Khác  
+
+**Tình trạng sức khỏe tâm thần:**
+6. **Bạn có gặp vấn đề về sức khỏe tâm thần không?**  
+   - [ ] Có  
+   - [ ] Không  
+
+7. **Mức độ nghiêm trọng của tình trạng sức khỏe tâm thần (nếu có):**  
+   - [ ] Không có  
+   - [ ] Thấp  
+   - [ ] Trung bình  
+   - [ ] Cao  
+
+8. **Bạn đã từng tham khảo ý kiến của chuyên gia sức khỏe tâm thần chưa?**  
+   - [ ] Có  
+   - [ ] Không  
+
+**Mức độ căng thẳng:**
+9. **Mức độ căng thẳng hiện tại của bạn:**  
+   - [ ] Thấp  
+   - [ ] Trung bình  
+   - [ ] Cao  
+
+**Các yếu tố về lối sống:**
+10. **Số giờ ngủ trung bình mỗi đêm:** (Ví dụ: 7.5)
+11. **Số giờ làm việc mỗi tuần:** (Ví dụ: 40)
+12. **Số giờ hoạt động thể chất mỗi tuần:** (Ví dụ: 3)
