@@ -38,19 +38,22 @@
 
 ### 2. **Bảng `ThanhVien` (Thông Tin Thành Viên)**
 
-| Tên Trường       | Kiểu Dữ Liệu     | Mô Tả                                              |
-|------------------|------------------|----------------------------------------------------|
-| `id`            | `UUID`           | ID duy nhất của thành viên                         |
-| `name`          | `string`         | Tên của thành viên                                 |
-| `email`         | `string`         | Địa chỉ email (liên hệ chính của thành viên)       |
-| `phone_number`  | `string`         | Số điện thoại (liên hệ phụ)                         |
+
+| Tên Trường       | Kiểu Dữ Liệu     | Mô Tả                                                |
+|------------------|------------------|------------------------------------------------------|
+| `id`            | `UUID`           | ID duy nhất của thành viên                           |
+| `name`          | `string`         | Tên của thành viên                                   |
+| `email`         | `string`         | Địa chỉ email (liên hệ chính của thành viên)         |
+| `phone_number`  | `string`         | Số điện thoại (liên hệ phụ)                           |
 | `role`          | `enum`           | Vai trò trong cộng đoàn (`LEADER`, `ACCOUNTANT`, `MEMBER`) |
-| `join_date`     | `date`           | Ngày gia nhập cộng đoàn                            |
-| `dob`           | `date` hoặc `null`| Ngày sinh của thành viên (có thể null nếu không có)|
-| `congdoan_id`   | `UUID`           | ID của cộng đoàn mà thành viên thuộc về            |
+| `join_date`     | `date`           | Ngày gia nhập cộng đoàn                              |
+| `dob`           | `date` hoặc `null`| Ngày sinh của thành viên (có thể null nếu không có)  |
+| `first_vows_date` | `date` hoặc `null` | Ngày khấn tạm (First Vows), có thể null nếu không áp dụng |
+| `final_vows_date` | `date` hoặc `null` | Ngày khấn trọn đời (Final Vows), có thể null nếu không áp dụng |
+| `congdoan_id`   | `UUID`           | ID của cộng đoàn mà thành viên thuộc về              |
 | `is_active`     | `boolean`        | Trạng thái hoạt động của thành viên (`true` nếu đang hoạt động) |
-| `created_at`    | `datetime`       | Ngày thêm thành viên vào hệ thống                  |
-| `updated_at`    | `datetime`       | Ngày cập nhật thông tin thành viên lần cuối        |
+| `created_at`    | `datetime`       | Ngày thêm thành viên vào hệ thống                    |
+| `updated_at`    | `datetime`       | Ngày cập nhật thông tin thành viên lần cuối          |
 
 #### Mô tả chi tiết:
 - **id**: ID duy nhất để xác định mỗi thành viên.
@@ -64,6 +67,8 @@
 - **is_active**: Xác định thành viên có đang hoạt động trong cộng đoàn hay không.
 - **created_at**: Thời gian khi thành viên được thêm vào hệ thống.
 - **updated_at**: Thời gian cập nhật thông tin thành viên gần nhất.
+- **first_vows_date**: Ngày khấn tạm của thành viên. Để trống nếu không áp dụng cho thành viên đó.
+- **final_vows_date**: Ngày khấn trọn đời của thành viên. Để trống nếu không áp dụng cho thành viên đó.
 
 ---
 
