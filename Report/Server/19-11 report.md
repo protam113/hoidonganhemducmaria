@@ -9,20 +9,20 @@
 
 ### CURL Request:
 ```bash
-curl "http://localhost:8000/user/?page=1&role=1&role=2" \
-  -H "Accept: application/json, text/plain, */*" \
-  -H "Accept-Language: vi,en;q=0.9,en-US;q=0.8" \
-  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMyMDY2NzEzLCJpYXQiOjE3MzE4OTM5MTMsImp0aSI6IjUxNGM3OTZhOTEzMjQ3YzM4NDViMzAyYTQwYjMzY2ViIiwidXNlcl9pZCI6ImZmNGNmM2ZiLThhYmEtNDAzZC1iYmZjLWNkYTA1ZTg0NTc2YSJ9.W9IXLBcbEp-Pc-32wt52O1PwevbzHSGMZI6x6p0kdDo" \
-  -H "Connection: keep-alive" \
-  -H "Origin: http://localhost:3000" \
-  -H "Referer: http://localhost:3000/" \
-  -H "Sec-Fetch-Dest: empty" \
-  -H "Sec-Fetch-Mode: cors" \
-  -H "Sec-Fetch-Site: same-site" \
-  -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0" \
-  -H "sec-ch-ua: \"Microsoft Edge\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\"" \
-  -H "sec-ch-ua-mobile: ?0" \
-  -H "sec-ch-ua-platform: \"Windows\""
+curl ^"http://localhost:8000/user/?page=1^&role=3^" ^
+  -H ^"Accept: application/json, text/plain, */*^" ^
+  -H ^"Accept-Language: vi,en;q=0.9,en-US;q=0.8^" ^
+  -H ^"Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMyMDY2NzEzLCJpYXQiOjE3MzE4OTM5MTMsImp0aSI6IjUxNGM3OTZhOTEzMjQ3YzM4NDViMzAyYTQwYjMzY2ViIiwidXNlcl9pZCI6ImZmNGNmM2ZiLThhYmEtNDAzZC1iYmZjLWNkYTA1ZTg0NTc2YSJ9.W9IXLBcbEp-Pc-32wt52O1PwevbzHSGMZI6x6p0kdDo^" ^
+  -H ^"Connection: keep-alive^" ^
+  -H ^"Origin: http://localhost:3000^" ^
+  -H ^"Referer: http://localhost:3000/^" ^
+  -H ^"Sec-Fetch-Dest: empty^" ^
+  -H ^"Sec-Fetch-Mode: cors^" ^
+  -H ^"Sec-Fetch-Site: same-site^" ^
+  -H ^"User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0^" ^
+  -H ^"sec-ch-ua: ^\^"Microsoft Edge^\^";v=^\^"131^\^", ^\^"Chromium^\^";v=^\^"131^\^", ^\^"Not_A Brand^\^";v=^\^"24^\^"^" ^
+  -H ^"sec-ch-ua-mobile: ?0^" ^
+  -H ^"sec-ch-ua-platform: ^\^"Windows^\^"^"
 ```
 
 ### Mô tả lỗi:
