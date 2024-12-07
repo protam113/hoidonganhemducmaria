@@ -1,15 +1,15 @@
 
-# Tài liệu API cho hệ thống Sứ Bụ
+# Tài liệu API cho hệ thống Sứ Vụ
 
 ## Tổng Quan
 
-Hệ thống này cung cấp các API cho việc quản lý tài liệu (gọi là "Sứ Bụ") với các thao tác **POST**, **GET**, **PATCH**, và **DELETE**. Ngoài ra, hệ thống còn cung cấp các API để **khôi phục mật khẩu** và **thay đổi mật khẩu** cho người dùng.
+Hệ thống này cung cấp các API cho việc quản lý tài liệu (gọi là "Sứ Vụ") với các thao tác **POST**, **GET**, **PATCH**, và **DELETE**. Ngoài ra, hệ thống còn cung cấp các API để **khôi phục mật khẩu** và **thay đổi mật khẩu** cho người dùng.
 
-## 1. Sứ Bụ - Các Thao Tác CRUD
+## 1. Sứ Vụ - Các Thao Tác CRUD
 
-Các API này giúp quản lý các tài liệu "Sứ Bụ", và các tài liệu này có thể được truy cập công khai.
+Các API này giúp quản lý các tài liệu "Sứ Vụ", và các tài liệu này có thể được truy cập công khai.
 
-### 1.1 POST - Tạo Mới Sứ Bụ
+### 1.1 POST - Tạo Mới Sứ Vụ
 
 **Endpoint:** `POST /api/su-bu`
 
@@ -62,13 +62,13 @@ Các API này giúp quản lý các tài liệu "Sứ Bụ", và các tài liệ
 }
 ```
 
-### 1.2 GET - Lấy Danh Sách Sứ Bụ
+### 1.2 GET - Lấy Danh Sách Sứ Vụ
 
 **Endpoint:** `GET /api/su-bu`
 
 **Phản hồi (Response):**
 - `200 OK`
-- Trả về danh sách tất cả các tài liệu "Sứ Bụ".
+- Trả về danh sách tất cả các tài liệu "Sứ Vụ".
 
 ```json
 [
@@ -99,7 +99,7 @@ Các API này giúp quản lý các tài liệu "Sứ Bụ", và các tài liệ
 ]
 ```
 
-### 1.3 PATCH - Cập Nhật Sứ Bụ
+### 1.3 PATCH - Cập Nhật Sứ Vụ
 
 **Endpoint:** `PATCH /api/su-bu/{id}`
 
@@ -145,7 +145,7 @@ Các API này giúp quản lý các tài liệu "Sứ Bụ", và các tài liệ
 }
 ```
 
-### 1.4 DELETE - Xóa Sứ Bụ
+### 1.4 DELETE - Xóa Sứ Vụ
 
 **Endpoint:** `DELETE /api/su-bu/{id}`
 
@@ -155,7 +155,7 @@ Các API này giúp quản lý các tài liệu "Sứ Bụ", và các tài liệ
 
 ```json
 {
-    "message": "Sứ Bụ đã được xóa thành công"
+    "message": "Sứ Vụ đã được xóa thành công"
 }
 ```
 
@@ -256,7 +256,7 @@ Hệ thống API sẽ xử lý lỗi với các mã lỗi tương ứng. Dưới
 
 
 ### Lý thuyết:
-1. **Quản lý tài liệu "Sứ Bụ"**: Các thao tác CRUD (Tạo, Lấy, Cập nhật, Xóa) cho tài liệu giúp người dùng có thể thêm mới tài liệu, sửa đổi thông tin tài liệu, lấy danh sách tài liệu và xóa tài liệu không còn cần thiết.
+1. **Quản lý tài liệu "Sứ Vụ"**: Các thao tác CRUD (Tạo, Lấy, Cập nhật, Xóa) cho tài liệu giúp người dùng có thể thêm mới tài liệu, sửa đổi thông tin tài liệu, lấy danh sách tài liệu và xóa tài liệu không còn cần thiết.
 2. **Quản lý mật khẩu**:
     - **Quên mật khẩu**: Người dùng sẽ nhập email để nhận mã xác nhận. Sau đó, họ sẽ nhập mã và mật khẩu mới để khôi phục tài khoản.
     - **Thay đổi mật khẩu**: Người dùng đăng nhập và nhập mật khẩu cũ, rồi thay đổi mật khẩu mới. Hệ thống sẽ kiểm tra mật khẩu cũ và cập nhật mật khẩu mới nếu hợp lệ.
