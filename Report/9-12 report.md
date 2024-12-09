@@ -76,8 +76,6 @@ GET {{domain}}/event/697a784f-c5a1-4c99-88e5-34a4b377ab88/register/?status=appro
 | `email`           | String       | Email liên hệ của người tham gia.            |
 | `phone_number`    | String       | Số điện thoại liên hệ.                       |
 | `status`          | String       | Trạng thái đăng ký: `approve`, `pending`, `reject`. |
-| `registered_at`   | String (ISO) | Thời gian đăng ký.                           |
-
 ---
 
 ### Lỗi:
