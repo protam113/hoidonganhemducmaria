@@ -22,16 +22,16 @@ https://portal.vietnix.vn/
 3. Nhấn **Save** để lưu.
 
 ### Bước 3: Cài Đặt Nginx  rên Server Ubuntu
-`
+ ```
 sudo apt update
 sudo apt install nginx -y
-`
+```
 ### Bước 4: Cấu hình tên miền trong Web Server
-`
+```
 sudo nano /etc/nginx/sites-available/hoidonganhemducmaria.com
-`
+```
 
-`
+```
 server {
     listen 80;
     server_name hoidonganhemducmaria.com www.hoidonganhemducmaria.com;
@@ -45,26 +45,26 @@ server {
         proxy_cache_bypass $http_upgrade;
     }
 }
-`
+```
 ### Bước 5 : Cài đặt SSL với Certbot
 
 ## Cài đặt Certbot:
-`
+```
 sudo apt install certbot python3-certbot-nginx -y
-`
+```
 ## Cài chứng chỉ SSL cho tên miền:
-`
+```
 sudo certbot --nginx -d hoidonganhemducmaria.com -d www.hoidonganhemducmaria.com
-`
+```
 
 ## Tự động gia hạn chứng chỉ:
-`
+```
 sudo systemctl enable certbot.timer
-`
+```
 
 
 ### Final
-`
+```
 # Cấu hình cho HTTP (port 80)
 server {
     listen 80;
@@ -106,12 +106,4 @@ server {
     }
 }
 
-# Thêm một server block cho việc không cho phép truy cập HTTP trực tiếp (port 80) mà không chuyển hướng
-server {
-    listen 80;
-    server_name hoidonganhemducmaria.com www.hoidonganhemducmaria.com;
-
-    # Chỉ trả về lỗi 404 nếu có yêu cầu HTTP
-    return 404;
-}
-`
+```
