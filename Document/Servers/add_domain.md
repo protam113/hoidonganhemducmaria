@@ -21,6 +21,68 @@ https://portal.vietnix.vn/
 
 3. Nhấn **Save** để lưu.
 
+```
+# HTTP Server - Phục vụ Frontend (client)
+server {
+    listen 80;
+    server_name hoidonganhemducmaria.com www.hoidonganhemducmaria.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:3000; # Frontend chạy trên cổng 3000
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+
+        # Cache static files
+        location ~* \.(?:ico|css|js|gif|jpe?g|png|svg|woff2?|eot|ttf|otf)$ {
+            expires 6M;
+            access_log off;
+            add_header Cache-Control "public";
+        }
+    }
+}
+
+# HTTP Server - Phục vụ Backend (API)
+server {
+    listen 80;
+    server_name api.hoidonganhemducmaria.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:1337; # Backend chạy trên cổng 1337
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+
+# HTTP Server - Phục vụ Dashboard
+server {
+    listen 80;
+    server_name dashboard.hoidonganhemducmaria.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:4000; # Dashboard chạy trên cổng 4000
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+
+        # Cache static files
+        location ~* \.(?:ico|css|js|gif|jpe?g|png|svg|woff2?|eot|ttf|otf)$ {
+            expires 6M;
+            access_log off;
+            add_header Cache-Control "public";
+        }
+    }
+}
+
+```
+
 ### Bước 3: Cài Đặt Nginx  rên Server Ubuntu
  ```
 sudo apt update
