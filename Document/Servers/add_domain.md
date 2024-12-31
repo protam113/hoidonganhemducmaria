@@ -195,7 +195,7 @@ sudo apt install certbot python3-certbot-nginx -y
 ```
 ## Cài chứng chỉ SSL cho tên miền:
 ```
-sudo certbot --nginx -d hoidonganhemducmaria.com -d www.hoidonganhemducmaria.com
+sudo certbot --nginx -d hoidonganhemducmaria.com -d www.hoidonganhemducmaria.com -d api.hoidonganhemducmaria.com -d dashboard.hoidonganhemducmaria.com
 ```
 
 ## Tự động gia hạn chứng chỉ:
