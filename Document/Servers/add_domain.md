@@ -32,12 +32,55 @@ sudo nano /etc/nginx/sites-available/hoidonganhemducmaria.com
 ```
 
 ```
+# HTTP Server - Chuyển hướng toàn bộ HTTP sang HTTPS
 server {
     listen 80;
+    server_name hoidonganhemducmaria.com www.hoidonganhemducmaria.com api.hoidonganhemducmaria.com dashboard.hoidonganhemducmaria.com;
+
+    # Chuyển hướng HTTP sang HTTPS
+    return 301 https://$host$request_uri;
+}
+
+# HTTPS Server - Phục vụ Frontend (client)
+server {
+    listen 443 ssl;
     server_name hoidonganhemducmaria.com www.hoidonganhemducmaria.com;
 
+    ssl_certificate /path/to/your/certificate.pem;
+    ssl_certificate_key /path/to/your/private.key;
+
+    # Gzip settings
+    gzip on;
+    gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+    gzip_min_length 256;
+
     location / {
-        proxy_pass http://127.0.0.1:4000;
+        proxy_pass http://127.0.0.1:3000; # Frontend chạy trên cổng 3000
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+
+        # Cache static files
+        location ~* \.(?:ico|css|js|gif|jpe?g|png|svg|woff2?|eot|ttf|otf)$ {
+            expires 6M;
+            access_log off;
+            add_header Cache-Control "public";
+        }
+    }
+}
+
+# HTTPS Server - Phục vụ Backend (API)
+server {
+    listen 443 ssl;
+    server_name api.hoidonganhemducmaria.com;
+
+    ssl_certificate /path/to/your/certificate.pem;
+    ssl_certificate_key /path/to/your/private.key;
+
+    location / {
+        proxy_pass http://127.0.0.1:1337; # Backend chạy trên cổng 1337
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
@@ -45,6 +88,32 @@ server {
         proxy_cache_bypass $http_upgrade;
     }
 }
+
+# HTTPS Server - Phục vụ Dashboard
+server {
+    listen 443 ssl;
+    server_name dashboard.hoidonganhemducmaria.com;
+
+    ssl_certificate /path/to/your/certificate.pem;
+    ssl_certificate_key /path/to/your/private.key;
+
+    location / {
+        proxy_pass http://127.0.0.1:4000; # Dashboard chạy trên cổng 4000
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+
+        # Cache static files
+        location ~* \.(?:ico|css|js|gif|jpe?g|png|svg|woff2?|eot|ttf|otf)$ {
+            expires 6M;
+            access_log off;
+            add_header Cache-Control "public";
+        }
+    }
+}
+
 ```
 ### Bước 5 : Cài đặt SSL với Certbot
 
