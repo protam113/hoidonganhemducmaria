@@ -127,7 +127,7 @@ server {
 ```
 
 ```
-sudo ln -s /etc/nginx/sites-available/yourdomain.com /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/hoidonganhemducmaria.com /etc/nginx/sites-enabled/
 ```
 
 ```
