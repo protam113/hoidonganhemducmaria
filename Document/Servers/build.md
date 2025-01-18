@@ -137,6 +137,4 @@ docker-compose up -d
 1. **Build Docker image**: Sử dụng `docker-compose build`.
 2. **Chạy container**: Sử dụng `docker-compose up -d`.
 
----
 
-Nếu cần thêm thông tin hoặc tinh chỉnh, hãy cho tôi biết nhé! 🚀
