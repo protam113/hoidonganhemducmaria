@@ -88,7 +88,17 @@ sudo apt install -y nodejs
 node -v
 npm -v
 ```
+
+
+
 ### Clone Dự án
+
+#### Vào thư mục
+```bash
+ cd /var/www
+```
+#### Clone 2 dự án vào
+
 ```bash
 git clone https://github.com/protam113/nhadongDashboard.git (dashboard)
 git clone https://github.com/protam113/champagnat.git (fe)
